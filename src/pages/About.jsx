@@ -11,7 +11,6 @@ function About() {
             About Book Explorer
           </Card.Title>
 
-          {/* ✅ text simplu rămâne în Card.Text */}
           <Card.Text>
             <strong>Book Explorer</strong> is a React-based application where
             you can discover, save and explore your favorite books. Data is
@@ -29,7 +28,6 @@ function About() {
             <FaServer /> <strong>json-server</strong>.
           </Card.Text>
 
-          {/* ✅ restul este în afara Card.Text */}
           <hr />
 
           <h5 className="mt-4 mb-3">

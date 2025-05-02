@@ -28,8 +28,8 @@ A React-based app to discover and save books using Open Library API and json-ser
 npm install
 npm run dev
 npx json-server --watch books.json --port 3001
-
-- Expanding the ESLint configuration
+```
+## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-```
+

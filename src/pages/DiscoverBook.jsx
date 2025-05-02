@@ -44,13 +44,13 @@ function DiscoverBook() {
           const response = await axios.get(
             `https://openlibrary.org/search.json?q=${query}`
           );
-          setBooks(response.data.docs.slice(0, 20));
+          setBooks(response.data.docs.slice(0, 12));
         } catch (error) {
           console.error('Error fetching external books', error);
         } finally {
           setLoading(false);
         }
-      }, 1500);
+      }, 2000);
     };
 
     fetchSavedBooks();
@@ -71,7 +71,7 @@ function DiscoverBook() {
     const newBook = {
       title: book.title || 'No Title',
       author: book.author_name ? book.author_name.join(', ') : 'Unknown Author',
-      schortDesc: 'Imported from Open Library',
+      schortDesc: book.ia_collection_s || 'Imported from Open Library',
       description: book.first_sentence
         ? typeof book.first_sentence === 'string'
           ? book.first_sentence

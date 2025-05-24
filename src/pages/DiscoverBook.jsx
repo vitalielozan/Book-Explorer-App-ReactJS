@@ -50,7 +50,7 @@ function DiscoverBook() {
         } finally {
           setLoading(false);
         }
-      }, 2000);
+      }, 1000);
     };
 
     fetchSavedBooks();
@@ -95,15 +95,15 @@ function DiscoverBook() {
   };
 
   return (
-    <Container className="mt-5">
-      <h2 className="text-center mb-4">Discover Books</h2>
+    <Container className='mt-5'>
+      <h2 className='text-center mb-4'>Discover Books</h2>
 
-      <Form className="mb-4">
-        <Form.Group className="d-flex">
+      <Form className='mb-4'>
+        <Form.Group className='d-flex'>
           <Form.Select
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            className="me-2"
+            className='me-2'
           >
             {genres.map((genre, index) => (
               <option key={index} value={genre}>
@@ -115,31 +115,31 @@ function DiscoverBook() {
       </Form>
 
       {loading ? (
-        <div className="text-center">
-          <Spinner animation="border" variant="primary" />
+        <div className='text-center'>
+          <Spinner animation='border' variant='primary' />
         </div>
       ) : (
         <Row>
           {books.map((book, index) => (
-            <Col key={index} md={4} className="d-flex align-items-stretch mb-4">
-              <Card className="w-100">
+            <Col key={index} md={4} className='d-flex align-items-stretch mb-4'>
+              <Card className='w-100'>
                 {book.cover_i && (
                   <Card.Img
-                    variant="top"
+                    variant='top'
                     src={`https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`}
                     style={{ height: '250px', objectFit: 'cover' }}
                   />
                 )}
-                <Card.Body className="d-flex flex-column">
+                <Card.Body className='d-flex flex-column'>
                   <Card.Title>{book.title}</Card.Title>
-                  <Card.Subtitle className="mb-2 text-muted">
+                  <Card.Subtitle className='mb-2 text-muted'>
                     {book.author_name
                       ? book.author_name.join(', ')
                       : 'Unknown Author'}
                   </Card.Subtitle>
                   <Button
-                    variant="success"
-                    className="mt-auto"
+                    variant='success'
+                    className='mt-auto'
                     onClick={() => saveBook(book)}
                   >
                     Save this Book
